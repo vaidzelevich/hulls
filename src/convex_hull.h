@@ -66,12 +66,8 @@ namespace hull
             }
         }
         indices.clear();
-        std::copy(begin(down), end(down), back_inserter(indices));
-        std::copy(next(rbegin(up)), rend(up), back_inserter(indices));
-        // // for (size_t i=0; i<up.size(); ++i)
-		// //     indices.push_back (up[i]);
-	    // for (size_t i=up.size()-2; i>0; --i)
-		//     indices.push_back (up[i]);
+        copy(begin(down), end(down), back_inserter(indices));
+        copy(next(rbegin(up)), prev(rend(up)), back_inserter(indices));
         return indices;
     }
 
